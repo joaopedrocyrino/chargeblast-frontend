@@ -1,0 +1,100 @@
+/* Shared surface for floating panels (popover, menu, listbox). */
+.surface {
+  z-index: var(--z-popover);
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-overlay);
+  color: var(--color-text-primary);
+  outline: none;
+  animation: overlay-in var(--transition-base);
+}
+
+@keyframes overlay-in {
+  from {
+    transform: translateY(-2px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.list {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: var(--space-1) 0;
+  min-width: 160px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 32px;
+  padding: var(--space-1-5) var(--space-3);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  text-align: left;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.option[data-active] {
+  background: var(--color-background-hover);
+}
+
+.option:focus-visible {
+  box-shadow: var(--focus-ring-inset);
+}
+
+.option[aria-disabled='true'],
+.option:disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.optionIcon {
+  display: inline-flex;
+  color: var(--color-text-tertiary);
+}
+
+.danger {
+  color: var(--color-danger-text);
+}
+.danger .optionIcon {
+  color: currentColor;
+}
+
+.check {
+  display: inline-flex;
+  margin-left: auto;
+  padding-left: var(--space-3);
+  color: var(--color-brand);
+}
+
+.separator {
+  height: 1px;
+  margin: var(--space-1) 0;
+  background: var(--color-border);
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  background: var(--color-background);
+  box-shadow: inset 0 0 0 1px var(--color-border-control);
+  color: transparent;
+}
+
+.option[aria-selected='true'] .checkbox {
+  background: var(--color-brand);
+  box-shadow: inset 0 0 0 1px var(--color-brand);
+  color: var(--color-text-inverse);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@chargeblast/ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free React component library and icon set for Chargeblast",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles/index.css"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

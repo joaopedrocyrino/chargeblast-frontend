@@ -1,0 +1,13 @@
+.list {
+  padding: var(--space-1) 0;
+  outline: none;
+  border-radius: var(--radius-md);
+}
+
+.list:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.panel {
+  padding: var(--space-1) 0;
+}

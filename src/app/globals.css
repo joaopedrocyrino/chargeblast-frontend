@@ -1,0 +1,9 @@
+/* App-level globals. Design tokens and the reset live in @chargeblast/ui. */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-background);
+}

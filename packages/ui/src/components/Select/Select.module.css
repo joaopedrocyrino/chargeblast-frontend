@@ -1,0 +1,47 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1-5);
+  height: var(--control-height-md);
+  padding: 0 var(--space-2) 0 var(--space-2-5);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  box-shadow: var(--shadow-control);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  transition: box-shadow var(--transition-fast);
+}
+
+.sm {
+  height: var(--control-height-sm);
+  padding: 0 var(--space-1-5) 0 var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.trigger:hover:not(:disabled) {
+  box-shadow: var(--shadow-control-hover);
+}
+
+.trigger:focus-visible {
+  box-shadow: var(--shadow-control), var(--focus-ring);
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+}
+
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  color: var(--color-text-tertiary);
+}
+
+.list {
+  min-width: 96px;
+}

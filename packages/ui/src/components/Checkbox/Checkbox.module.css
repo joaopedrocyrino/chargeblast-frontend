@@ -1,0 +1,95 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
+
+.root[data-disabled] {
+  cursor: not-allowed;
+  color: var(--color-text-disabled);
+}
+
+.control {
+  position: relative;
+  display: inline-flex;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+  z-index: 1;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-xs);
+  background: var(--color-background);
+  box-shadow:
+    inset 0 0 0 1px var(--color-border-control),
+    var(--shadow-checkbox);
+  color: var(--color-text-inverse);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.check,
+.dash {
+  display: none;
+  width: 10px;
+  height: 10px;
+}
+
+.input:hover:not(:disabled) + .box {
+  box-shadow:
+    inset 0 0 0 1px var(--color-text-disabled),
+    var(--shadow-checkbox);
+}
+
+.input:checked + .box,
+.input:indeterminate + .box {
+  background: var(--color-brand);
+  box-shadow: inset 0 0 0 1px var(--color-brand);
+}
+
+.input:checked:not(:indeterminate) + .box .check {
+  display: block;
+}
+
+.input:indeterminate + .box .dash {
+  display: block;
+}
+
+.input:focus-visible + .box {
+  box-shadow:
+    inset 0 0 0 1px var(--color-brand),
+    var(--focus-ring);
+}
+
+.input:disabled + .box {
+  opacity: 0.5;
+}
+
+.label {
+  line-height: var(--line-height-md);
+}
+
+/* Inline-flex on a baseline leaves descender space below; middle-align in table cells and text. */
+.root {
+  vertical-align: middle;
+}

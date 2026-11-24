@@ -1,0 +1,22 @@
+/* Doubled class for specificity over the Input wrapper regardless of CSS order. */
+.global.global {
+  height: 34px;
+  padding: 0 var(--space-3);
+  background: var(--color-background-subtle);
+  box-shadow: none;
+  color: var(--color-text-primary);
+}
+
+.global.global:hover {
+  box-shadow: none;
+  background: var(--color-background-muted);
+}
+
+.global.global:focus-within {
+  background: var(--color-background);
+  box-shadow: var(--shadow-control), var(--focus-ring);
+}
+
+.global input::placeholder {
+  color: var(--color-text-tertiary);
+}

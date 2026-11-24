@@ -1,0 +1,13 @@
+.tooltip {
+  z-index: var(--z-tooltip);
+  max-width: 280px;
+  padding: var(--space-1-5) var(--space-2);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-tooltip);
+  pointer-events: auto;
+}

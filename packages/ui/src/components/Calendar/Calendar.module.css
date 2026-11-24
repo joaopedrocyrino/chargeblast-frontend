@@ -1,0 +1,86 @@
+.calendar {
+  width: 252px;
+  padding: var(--space-3);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.grid {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.weekday {
+  height: 28px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+}
+
+.grid td {
+  padding: 1px 0;
+  text-align: center;
+}
+
+.day {
+  width: 32px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.day:hover:not(:disabled) {
+  background: var(--color-background-muted);
+}
+
+.day:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.day:disabled {
+  color: var(--color-text-disabled);
+}
+
+.today {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-text);
+}
+
+.selected,
+.selected:hover:not(:disabled) {
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+
+.range-middle {
+  background: var(--color-brand-subtle);
+}
+.range-start {
+  background: linear-gradient(90deg, transparent 50%, var(--color-brand-subtle) 50%);
+}
+.range-end {
+  background: linear-gradient(90deg, var(--color-brand-subtle) 50%, transparent 50%);
+}
+.range-start .day,
+.range-end .day,
+.range-single .day {
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+.range-middle .day {
+  border-radius: 0;
+}

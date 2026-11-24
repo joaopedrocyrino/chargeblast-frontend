@@ -1,0 +1,165 @@
+/*
+ * Design tokens for @chargeblast/ui.
+ *
+ * Values were tuned against the reference screenshot of the Stripe Dashboard
+ * Transactions → Payments screen (supplied 2026-11-23). Colours are eyeballed
+ * from that image, not sampled from Stripe's CSS; adjust here – components
+ * only consume tokens.
+ */
+:root {
+  /* ---- Colour: neutrals ---- */
+  --color-background: #ffffff;
+  --color-background-subtle: #f6f8fa;
+  --color-background-muted: #ebeef1;
+  --color-background-hover: #f5f6f8;
+  --color-background-selected: #f5f4ff;
+
+  --color-text-strong: #1a1b25;
+  /* Default copy where the reference is darker than secondary (e.g. top bar notices). */
+  --color-text-body: #414552;
+  --color-text-primary: #353a44;
+  --color-text-secondary: #596171;
+  --color-text-tertiary: #687385;
+  --color-text-disabled: #a3acba;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #ebeef1;
+  --color-border-strong: #d5dbe1;
+  --color-border-control: #c0c8d2;
+
+  /* ---- Colour: brand / interactive ---- */
+  --color-brand: #635bff;
+  --color-brand-hover: #5851ea;
+  --color-brand-active: #4e46d8;
+  --color-brand-text: #533afd;
+  --color-brand-subtle: #f2f1ff;
+  --color-link: #533afd;
+  --color-link-hover: #2e2b8c;
+  /* Account logo tile. */
+  --color-brand-muted: #d9d6ff;
+  --color-selection: rgba(99, 91, 255, 0.2);
+
+  /* ---- Colour: feedback (badge fills / text) ---- */
+  --color-success-bg: #d7f7c2;
+  --color-success-border: #a6eb84;
+  --color-success-text: #217005;
+  --color-success-icon: #2f8a0c;
+  --color-danger-bg: #ffe7f2;
+  --color-danger-border: #ffccdf;
+  --color-danger-text: #b3093c;
+  --color-danger-icon: #df1b41;
+  --color-warning-bg: #fcedb9;
+  --color-warning-border: #f7d57a;
+  --color-warning-text: #a82c00;
+  --color-info-bg: #e5f2ff;
+  --color-info-border: #b8daff;
+  --color-info-text: #0055bc;
+  --color-neutral-bg: #f6f8fa;
+  --color-neutral-border: #d5dbe1;
+  --color-neutral-text: #545969;
+
+  /* ---- Colour: surfaces & accents ---- */
+  --color-surface-inverse: #1a1b25;
+  --color-backdrop: rgba(26, 31, 54, 0.4);
+  --color-notification: #3b82f6;
+  /* Neutral stand-ins for the reference's pinned-app logos. */
+  --color-app-tile-blue: #5aa9e6;
+  --color-app-tile-dark: #0a0a0a;
+  --color-app-tile-accent: #3ecf8e;
+
+  /* ---- Focus ---- */
+  --focus-ring: 0 0 0 4px rgba(1, 150, 237, 0.36);
+  --focus-ring-danger: 0 0 0 4px rgba(223, 27, 65, 0.24);
+  --focus-ring-inset: inset 0 0 0 2px rgba(1, 150, 237, 0.6);
+
+  /* ---- Typography ---- */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Ubuntu, Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+
+  --font-size-2xs: 10px;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  /* Table headers and dense data. */
+  --font-size-compact: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 28px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-xs: 16px;
+  --line-height-sm: 16px;
+  --line-height-md: 20px;
+  --line-height-lg: 24px;
+  --line-height-xl: 28px;
+  --line-height-2xl: 36px;
+
+  /* ---- Spacing (4px grid) ---- */
+  --space-0: 0;
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ---- Radii ---- */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 9999px;
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+
+  /* ---- Shadows ---- */
+  --shadow-control: 0 1px 1px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(64, 68, 82, 0.16);
+  --shadow-control-hover: 0 1px 1px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(64, 68, 82, 0.24);
+  --shadow-primary: 0 1px 1px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--color-brand);
+  --shadow-overlay:
+    0 0 0 1px rgba(64, 68, 82, 0.08), 0 5px 15px rgba(64, 68, 82, 0.08), 0 15px 35px rgba(64, 68, 82, 0.12);
+  --shadow-checkbox: 0 1px 1px rgba(0, 0, 0, 0.06);
+  --shadow-tooltip: 0 3px 8px rgba(0, 0, 0, 0.16);
+
+  /* ---- Motion ---- */
+  --transition-fast: 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- Z-index layers ---- */
+  --z-header: 20;
+  --z-sidebar: 30;
+  --z-popover: 1000;
+  --z-tooltip: 1100;
+
+  /* ---- Layout ---- */
+  --layout-sidebar-width: 256px;
+  --layout-header-height: 60px;
+  --layout-content-max-width: 1600px;
+  --layout-content-padding-x: 40px;
+  --control-height-sm: 24px;
+  --control-height-md: 28px;
+  --table-row-height: 36px;
+  --table-header-height: 36px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms linear;
+    --transition-base: 0ms linear;
+    --transition-slow: 0ms linear;
+  }
+}

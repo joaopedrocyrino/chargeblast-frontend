@@ -1,0 +1,114 @@
+.chip,
+.chipActive {
+  display: inline-flex;
+  align-items: center;
+  height: var(--control-height-sm);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.chip {
+  gap: 5px;
+  padding: 0 9px 0 var(--space-1-5);
+  border: var(--border-width) dashed var(--color-border-strong);
+  background: var(--color-background);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.chip:hover {
+  background: var(--color-background-subtle);
+  border-color: var(--color-border-control);
+}
+
+.chip svg {
+  color: var(--color-text-tertiary);
+}
+
+.chip:focus-visible,
+.chipMain:focus-visible,
+.chipClear:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.chip[aria-expanded='true'] {
+  border-style: solid;
+}
+
+.chipActive {
+  border: var(--border-width) solid var(--color-border-strong);
+  background: var(--color-background);
+}
+
+.chipClear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-left: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text-tertiary);
+  color: var(--color-text-inverse);
+}
+
+.chipClear:hover {
+  background: var(--color-text-primary);
+}
+
+.chipMain {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  height: 100%;
+  padding: 0 var(--space-2) 0 var(--space-1);
+  border-radius: var(--radius-pill);
+  font: inherit;
+  color: inherit;
+}
+
+.chipLabel {
+  color: var(--color-text-secondary);
+}
+
+.chipDivider {
+  width: var(--border-width);
+  height: 12px;
+  background: var(--color-border-strong);
+}
+
+.chipValue {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-brand-text);
+}
+
+.chipChevron {
+  color: var(--color-brand-text);
+}
+
+.panel {
+  padding: var(--space-3) 0 0;
+}
+
+.panelTitle {
+  padding: 0 var(--space-4) var(--space-2);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.panelBody {
+  padding: 0 var(--space-1);
+}
+
+.panelFooter {
+  padding: var(--space-3) var(--space-4);
+  border-top: var(--border-width) solid var(--color-border);
+}
